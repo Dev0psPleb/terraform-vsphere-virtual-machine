@@ -1,14 +1,3 @@
-# VMware vCenter connection
-variable "vsphere_server" {
-  description = "vsphere server for the environment - EXAMPLE: vcenter01.hosted.local"
-}
-variable "vsphere_user" {
-  description = "vsphere server for the environment - EXAMPLE: vsphereuser"
-}
-variable "vsphere_password" {
-  description = "vsphere server password for the environment"
-}
-
 # VM Resource Variables
 variable "datacenter" {
   description = "The datacenter to deploy the virtual machines to."
