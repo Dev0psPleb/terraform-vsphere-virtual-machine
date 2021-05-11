@@ -11,11 +11,9 @@ variable "vsphere_password" {
 
 # VM Resource Variables
 variable "datacenter" {
-  type        = "string"
   description = "The datacenter to deploy the virtual machines to."
 }
 variable "datastore" {
-  type        = "string"
   description = "The datastore to deploy the virtual machines to."
 }
 variable "resource_pool" {
@@ -25,7 +23,6 @@ variable "compute_cluster" {
   description = "The vSphere compute cluster to deploy the VM to."
 }
 variable "network" {
-  type        = "string"
   description = "The network to deploy virtual machines to."
 }
 variable "template_name" {
@@ -41,7 +38,6 @@ variable "folder" {
   default = "demo_lab"
 }
 variable "vm_name_prefix" {
-  type        = "string"
   description = "The prefix to use for virtual machines created with this module."
 }
 variable "vm_count" {
