@@ -19,7 +19,7 @@ variable "datastore" {
 variable "resource_pool" {
   description = "The resource pool to deploy the virtual machines to. If specifying a the root resource pool of a cluster, enter CLUSTER_NAME/Resources."
 }
-variable "compute_cluster" {
+variable "vsphere_compute_cluster" {
   description = "The vSphere compute cluster to deploy the VM to."
 }
 variable "network" {
