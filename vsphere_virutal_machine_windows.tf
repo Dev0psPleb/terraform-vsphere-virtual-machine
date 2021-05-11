@@ -1,10 +1,3 @@
-provider "vsphere" {
-  user                 = "${var.vsphere_user}"
-  password             = "${var.vsphere_password}"
-  vsphere_server       = "${var.vsphere_server}"
-  allow_unverified_ssl = true
-}
-
 resource "vsphere_virtual_machine" "virtual_machine_windows" {
   count            = "${var.template_os_family == "windows" ? var.vm_count : 0}"
   name             = "${var.vm_name_prefix}${count.index}"
