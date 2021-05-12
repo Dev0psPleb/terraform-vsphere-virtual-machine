@@ -6,6 +6,10 @@ variable "resource_pool" {
   type = string
 }
 
+variable "vsphere_compute_cluster" {
+  type = string
+}
+
 variable "datastore" {
   type = string
 }
@@ -67,20 +71,21 @@ variable "template_os_family" {
 }
 
 module "virtual_machines" {
-  source               = "../../"
-  admin_password       = "${var.admin_password}"
-  datacenter           = "${var.datacenter}"
-  datastore            = "${var.datastore}"
-  domain_name          = "${var.domain_name}"
-  linked_clone         = "${var.linked_clone}"
-  memory               = "${var.memory}"
-  network              = "${var.network}"
-  resource_pool        = "${var.resource_pool}"
-  template_name        = "${var.template_name}"
-  template_os_family   = "${var.template_os_family}"
-  vm_count             = "${var.vm_count}"
-  vm_name_prefix       = "${var.vm_name_prefix}"
-  workgroup            = "${var.workgroup}"
+  source                    = "../../"
+  admin_password            = "${var.admin_password}"
+  datacenter                = "${var.datacenter}"
+  datastore                 = "${var.datastore}"
+  domain_name               = "${var.domain_name}"
+  linked_clone              = "${var.linked_clone}"
+  memory                    = "${var.memory}"
+  network                   = "${var.network}"
+  resource_pool             = "${var.resource_pool}"
+  vsphere_compute_cluster   = "${var.vsphere_compute_cluster}"
+  template_name             = "${var.template_name}"
+  template_os_family        = "${var.template_os_family}"
+  vm_count                  = "${var.vm_count}"
+  vm_name_prefix            = "${var.vm_name_prefix}"
+  workgroup                 = "${var.workgroup}"
 }
 
 output "virtual_machine_names" {

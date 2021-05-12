@@ -6,6 +6,10 @@ variable "resource_pool" {
   type = string
 }
 
+variable "vsphere_compute_cluster" {
+  type = string
+}
+
 variable "datastore" {
   type = string
 }
@@ -47,6 +51,7 @@ module "virtual_machines" {
   memory                     = "${var.memory}"
   network                    = "${var.network}"
   resource_pool              = "${var.resource_pool}"
+  vsphere_compute_cluster    = "${var.vsphere_compute_cluster}"
   vm_count                   = "${var.vm_count}"
   vm_name_prefix             = "${var.vm_name_prefix}"
   wait_for_guest_net_timeout = "${var.wait_for_guest_net_timeout}"

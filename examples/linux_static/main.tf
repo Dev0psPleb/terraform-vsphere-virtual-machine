@@ -6,6 +6,10 @@ variable "resource_pool" {
   type = string
 }
 
+variable "vsphere_compute_cluster" {
+  type = string
+}
+
 variable "datastore" {
   type = string
 }
@@ -55,21 +59,22 @@ variable "template_os_family" {
 }
 
 module "virtual_machines" {
-  source               = "../../"
-  datacenter           = "${var.datacenter}"
-  datastore            = "${var.datastore}"
-  dns_servers          = ["${var.dns_servers}"]
-  domain_name          = "${var.domain_name}"
-  ipv4_address_start   = "${var.ipv4_address_start}"
-  ipv4_gateway         = "${var.ipv4_gateway}"
-  ipv4_network_address = "${var.ipv4_network_address}"
-  linked_clone         = "${var.linked_clone}"
-  network              = "${var.network}"
-  resource_pool        = "${var.resource_pool}"
-  template_name        = "${var.template_name}"
-  template_os_family   = "${var.template_os_family}"
-  vm_count             = "${var.vm_count}"
-  vm_name_prefix       = "${var.vm_name_prefix}"
+  source                    = "../../"
+  datacenter                = "${var.datacenter}"
+  datastore                 = "${var.datastore}"
+  dns_servers               = ["${var.dns_servers}"]
+  domain_name               = "${var.domain_name}"
+  ipv4_address_start        = "${var.ipv4_address_start}"
+  ipv4_gateway              = "${var.ipv4_gateway}"
+  ipv4_network_address      = "${var.ipv4_network_address}"
+  linked_clone              = "${var.linked_clone}"
+  network                   = "${var.network}"
+  resource_pool             = "${var.resource_pool}"
+  vsphere_compute_cluster   = "${var.vsphere_compute_cluster}"
+  template_name             = "${var.template_name}"
+  template_os_family        = "${var.template_os_family}"
+  vm_count                  = "${var.vm_count}"
+  vm_name_prefix            = "${var.vm_name_prefix}"
 }
 
 output "virtual_machine_names" {
